@@ -38,6 +38,7 @@ O relacionamento entre todas essas entidades é de suma importância, uma vez qu
 Com o funcionamento do sistema de banco de dados relacional da empresa DigiTênis há alguns requisitos funcionais a serem cumpridos. Na tabela 1 temos a frequência de algumas das principais consultas a serem feitas no sistema:
 <br><br>
 
+Tabela 1: Frequência esperada de consultas no sistema
 Consulta		                                           | Frequência
 :----------------------------------------------------- | :---------:
 Q001 - Visualizar estoque do produto                   | Alta
