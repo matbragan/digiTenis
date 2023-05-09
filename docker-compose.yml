@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sql_server:
+    container_name: digitenis_db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: digitenis
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "digiTenis2#"
+    volumes:
+      - digitenis-database:/var/opt/mssql/data
+
+volumes:
+  digitenis-database:
