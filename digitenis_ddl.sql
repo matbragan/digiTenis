@@ -3,7 +3,8 @@ create database digitenis;
 create table fornecedor (
     id_fornecedor int,
     cnpj varchar(14),
-    nome varchar(50),
+    primeiro_nome varchar(50),
+    sobrenome varchar(50),
     email varchar(50),
     primary key (id_fornecedor)
 );
@@ -26,7 +27,7 @@ create table funcionario (
 create table produto (
     id_produto int,
     nome varchar(50),
-    tamanho varchar(2), -- int faz mais sentido?
+    tamanho int,
     categoria varchar(50),
     valor_compra float,
     valor_venda float,
