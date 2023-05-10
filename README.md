@@ -13,17 +13,17 @@ Priscila Costa da Silva<br>
 Vinícius Evangelista<br>
 <br>
 
-## Etapa 1
+### Etapa 1
 Definição do grupo de trabalho e do objetivo do projeto
 
-## Etapa 2
+### Etapa 2
 Projeto Conceitual do Banco de Dados
 
-## Etapa 3
+### Etapa 3
 Projeto Lógico do Banco de Dados
 
-## Etapa 4
+### Etapa 4
 Projeto Físico do Banco de Dados
 
-## Etapa 5
+### Etapa 5
 Dataframes em Python
