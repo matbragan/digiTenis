@@ -1,5 +1,7 @@
 create database digitenis;
 
+use digitenis;
+
 create table fornecedor (
     id_fornecedor int,
     cnpj varchar(14),

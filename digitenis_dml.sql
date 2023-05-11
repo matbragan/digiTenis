@@ -1,3 +1,5 @@
+use digitenis;
+
 insert into fornecedor values 
 (1, '12345678000112', 'Nike', 'contato@nike.com.br'),
 (2, '98765432000198', 'Adidas', 'contato@adidas.com.br'),
