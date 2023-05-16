@@ -28,6 +28,7 @@ Vinícius Evangelista<br>
 **Projeto Físico do Banco de Dados**
 - [digitenis_ddl.sql](https://github.com/matbragan/pucminas-projeto2/blob/main/digitenis_ddl.sql)
 - [digitenis_dml.sql](https://github.com/matbragan/pucminas-projeto2/blob/main/digitenis_dml.sql)
+- [digitenis_dql.sql](https://github.com/matbragan/pucminas-projeto2/blob/main/digitenis_dql.sql)
 
 ### Etapa 5
 **Dataframes em Python**
