@@ -1,26 +1,26 @@
-USE digitenis
+USE digitenis;
 
 /*Cadastrar novos fornecedores*/
 INSERT INTO fornecedor (id_fornecedor, cnpj, nome, email)
-VALUES (id_fornecedor, '[CNPJ Fornecedor]', '[Nome Fornecedor]', '[E-mail Fornecedor]')
+VALUES (id_fornecedor, '[CNPJ Fornecedor]', '[Nome Fornecedor]', '[E-mail Fornecedor]');
 
 
 /*Cadastrar novos produtos*/
 INSERT INTO produto (id_produto, nome, tamanho, categoria, valor_compra, valor_venda, id_fornecedor)
-VALUES (id_produto, '[Nome Produto]', tamanho, '[Categoria Produto]', valor_compra, valor_venda, id_fornecedor)
+VALUES (id_produto, '[Nome Produto]', tamanho, '[Categoria Produto]', valor_compra, valor_venda, id_fornecedor);
 
 
 /*Cadastrar novos funcionários*/
 INSERT INTO funcionario (id_funcionario, primeiro_nome, sobrenome, cpf, cargo)
-VALUES (id_funcionario, '[Primeiro Nome]', '[Sobrenome]', '[CPF]', '[Cargo Funcionário]')
+VALUES (id_funcionario, '[Primeiro Nome]', '[Sobrenome]', '[CPF]', '[Cargo Funcionário]');
 
 
 /*Efetivar vendas*/
 INSERT INTO venda (id_venda, valor_total, data, hora, id_funcionario)
-VALUES (id_venda, valor_total, CAST((GETDATE()) AS date), CAST((GETDATE()) AS TIME), id_funcionario)
+VALUES (id_venda, valor_total, CAST((GETDATE()) AS date), CAST((GETDATE()) AS TIME), id_funcionario);
 
 INSERT INTO item_venda (id_produto, id_venda, quantidade, desconto)
-VALUES (id_produto, id_venda, quantidade, desconto)
+VALUES (id_produto, id_venda, quantidade, desconto);
 
 
 /*Visualizar informações de contato dos fornecedores*/
@@ -68,7 +68,7 @@ SELECT f.primeiro_nome AS Funcionario, ROUND(SUM(v.valor_total),2) AS Valor_Tota
 SELECT iv.id_venda, p.nome, p.tamanho, p.categoria, v.data, iv.quantidade FROM item_venda iv
 INNER JOIN produto p ON p.id_produto = iv.id_produto
 INNER JOIN venda v ON v.id_venda = iv.id_venda
-ORDER BY id_venda
+ORDER BY id_venda;
 
 
 /*Visualizar lista dos itens mais vendidos por funcionário*/
@@ -77,14 +77,14 @@ INNER JOIN item_venda iv ON iv.id_venda = v.id_venda
 INNER JOIN produto p ON p.id_produto = iv.id_produto
 INNER JOIN funcionario f ON f.id_funcionario = v.id_funcionario
 GROUP BY f.primeiro_nome, p.nome
-ORDER BY f.primeiro_nome, Qtd DESC
+ORDER BY f.primeiro_nome, Qtd DESC;
 
 
 /*Visualizar média de saída de cada produto por dia*/
 SELECT p.nome, AVG(iv.quantidade) AS 'media_saida' FROM item_venda iv
 INNER JOIN venda v ON v.id_venda = iv.id_venda
 INNER JOIN produto p ON p.id_produto = iv.id_produto
-GROUP BY p.nome
+GROUP BY p.nome;
 
 
 /*Calcular a quantidade de dias em que o estoque deve romper, considerando a média de saída diária dos produtos*/
@@ -92,7 +92,7 @@ GROUP BY p.nome
 
 
 /*Visualizar quantidade de fornecedores ativos cadastrados*/ -- temos um campo para identificar se está ativo?
-SELECT * FROM fornecedor
+SELECT * FROM fornecedor;
 
 
 /*Atualizar dados cadastrais dos fornecedores*/
