@@ -7,6 +7,7 @@ create table fornecedor (
     cnpj varchar(14),
     nome varchar(50),
     email varchar(50),
+	situacao VARCHAR(10),
     primary key (id_fornecedor)
 );
 

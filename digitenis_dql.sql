@@ -91,8 +91,9 @@ GROUP BY p.nome;
 
 
 
-/*Visualizar quantidade de fornecedores ativos cadastrados*/ -- temos um campo para identificar se está ativo?
-SELECT * FROM fornecedor;
+/*Visualizar quantidade de fornecedores ativos cadastrados*/
+SELECT * FROM fornecedor
+WHERE situacao = 'Ativo';
 
 
 /*Atualizar dados cadastrais dos fornecedores*/
