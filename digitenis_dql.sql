@@ -97,15 +97,19 @@ WHERE situacao = 'Ativo';
 
 
 /*Atualizar dados cadastrais dos fornecedores*/
-
+UPDATE fornecedor
+SET email = 'contato2@fila.com.br'
+WHERE id_fornecedor = 10;
 
 
 /*Atualizar dados cadastrais dos funcionários*/
-
-
+UPDATE funcionario
+SET cargo = 'Gerente'
+WHERE id_funcionario = 12;
 
 /*Visualizar média dos valores de vendas*/
-
+SELECT AVG(valor_total) AS 'media_valor_total'
+FROM venda;
 
 
 /*Visualizar média de itens por venda*/
@@ -113,12 +117,20 @@ WHERE situacao = 'Ativo';
 
 
 /*Visualizar categoria de produto que mais é vendido*/
-
+SELECT p.categoria, SUM(iv.quantidade) AS 'quantidade'
+FROM item_venda iv
+INNER JOIN produto p ON p.id_produto = iv.id_produto
+GROUP BY p.categoria
+ORDER BY quantidade DESC
 
 
 /*Dar baixa no estoque*/
-
+UPDATE estoque
+SET quantidade = quantidade - 1
+WHERE id_produto = 3;
 
 
 /*Dar entrada no estoque*/
-
+UPDATE estoque
+SET quantidade = quantidade + 1
+WHERE id_produto = 3;
