@@ -93,7 +93,7 @@ INNER JOIN (
 	INNER JOIN venda v ON v.id_venda = iv.id_venda
 	INNER JOIN produto p ON p.id_produto = iv.id_produto
 	GROUP BY p.id_produto
-) saida ON saida.id_produto = e.id_produto
+) saida ON saida.id_produto = e.id_produto;
 
 
 /*Atualizar dados cadastrais dos fornecedores*/
