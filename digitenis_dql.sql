@@ -87,7 +87,13 @@ GROUP BY p.nome;
 
 
 /*Calcular a quantidade de dias em que o estoque deve romper, considerando a média de saída diária dos produtos*/
-
+SELECT e.id_produto, e.quantidade, saida.media_saida, (e.quantidade / saida.media_saida) AS 'previsao_dias_rompimento' FROM estoque e
+INNER JOIN (
+	SELECT p.id_produto, AVG(iv.quantidade) AS 'media_saida' FROM item_venda iv
+	INNER JOIN venda v ON v.id_venda = iv.id_venda
+	INNER JOIN produto p ON p.id_produto = iv.id_produto
+	GROUP BY p.id_produto
+) saida ON saida.id_produto = e.id_produto
 
 
 /*Atualizar dados cadastrais dos fornecedores*/
@@ -109,13 +115,12 @@ FROM venda;
 /*Visualizar média de itens por venda*/
 
 
-
 /*Visualizar categoria de produto que mais é vendido*/
 SELECT p.categoria, SUM(iv.quantidade) AS 'quantidade'
 FROM item_venda iv
 INNER JOIN produto p ON p.id_produto = iv.id_produto
 GROUP BY p.categoria
-ORDER BY quantidade DESC
+ORDER BY quantidade DESC;
 
 
 /*Dar baixa no estoque*/
