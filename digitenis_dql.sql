@@ -2,43 +2,42 @@ USE digitenis;
 
 /*Cadastrar novos fornecedores*/
 INSERT INTO fornecedor (id_fornecedor, cnpj, nome, email)
-VALUES (id_fornecedor, '[CNPJ Fornecedor]', '[Nome Fornecedor]', '[E-mail Fornecedor]');
+VALUES (21, '6478912300015', 'Olympikus', 'contato@olympikus.com.br');
 
 
 /*Cadastrar novos produtos*/
 INSERT INTO produto (id_produto, nome, tamanho, categoria, valor_compra, valor_venda, id_fornecedor)
-VALUES (id_produto, '[Nome Produto]', tamanho, '[Categoria Produto]', valor_compra, valor_venda, id_fornecedor);
+VALUES (21, 'Anyway 2', 39, 'Corrida', 80, 119.90, 21);
 
 
 /*Cadastrar novos funcionários*/
 INSERT INTO funcionario (id_funcionario, primeiro_nome, sobrenome, cpf, cargo)
-VALUES (id_funcionario, '[Primeiro Nome]', '[Sobrenome]', '[CPF]', '[Cargo Funcionário]');
+VALUES (19, 'Gisele', 'Oliveira', '45695135726', 'Vendedor');
 
 
 /*Efetivar vendas*/
 INSERT INTO venda (id_venda, valor_total, data, hora, id_funcionario)
-VALUES (id_venda, valor_total, CAST((GETDATE()) AS date), CAST((GETDATE()) AS TIME), id_funcionario);
+VALUES (29, 359.70, CAST((GETDATE()) AS date), CAST((GETDATE()) AS TIME), 19);
 
 INSERT INTO item_venda (id_produto, id_venda, quantidade, desconto)
-VALUES (id_produto, id_venda, quantidade, desconto);
+VALUES (21, 29, 3, 35.97);
 
 
 /*Visualizar informações de contato dos fornecedores*/
-SELECT * FROM fornecedor
-    WHERE nome = '[Nome Fornecedor]';
+SELECT nome, email FROM fornecedor;
 
 
 /*Atualizar valor de venda dos produtos*/
 UPDATE produto
-    SET valor_venda = valor
-    WHERE id_produto = id_produto;
+SET valor_venda = 323.73
+WHERE id_produto = 21;
 
 
 /*Visualizar estoque por produto*/
 SELECT p.id_produto, p.nome, p.tamanho, e.quantidade
     FROM produto AS p
     INNER JOIN estoque AS e ON p.id_produto = e.id_produto
-    WHERE  p.id_produto = id_produto; 
+    WHERE  p.id_produto = 20; 
 
 
 /*Visualizar vendas do dia*/
@@ -89,11 +88,6 @@ GROUP BY p.nome;
 
 /*Calcular a quantidade de dias em que o estoque deve romper, considerando a média de saída diária dos produtos*/
 
-
-
-/*Visualizar quantidade de fornecedores ativos cadastrados*/
-SELECT * FROM fornecedor
-WHERE situacao = 'Ativo';
 
 
 /*Atualizar dados cadastrais dos fornecedores*/
