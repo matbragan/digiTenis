@@ -113,9 +113,7 @@ FROM venda;
 
 
 /*Visualizar média de itens por venda*/
-SELECT COUNT(v.id_venda) AS 'total_vendas', SUM(i.quantidade) AS 'total_itens_vendidos', ROUND((SUM(CAST(i.quantidade AS float))/COUNT(v.id_venda)),2) AS 'media_itens_por_venda'
-FROM venda v
-INNER JOIN item_venda i ON i.id_venda = v.id_venda
+
 
 /*Visualizar categoria de produto que mais é vendido*/
 SELECT p.categoria, SUM(iv.quantidade) AS 'quantidade'
