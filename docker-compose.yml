@@ -1,5 +1,8 @@
 version: '3.8'
 
+volumes:
+  digitenis-database:
+
 services:
   sql_server:
     container_name: digitenis_db
@@ -11,7 +14,5 @@ services:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: "digiTenis2#"
     volumes:
-      - digitenis-database:/var/opt/mssql/data
+      - digitenis-database:/data
 
-volumes:
-  digitenis-database:
