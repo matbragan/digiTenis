@@ -32,3 +32,17 @@ Vinícius Evangelista<br>
 
 ### Etapa 5
 **Dataframes em Python**
+
+<br>
+<hr>
+<br>
+
+### Criação do banco de dados via Docker
+~~~sh
+sudo docker run \
+-e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=digiTenis1@" \
+-p 1433:1433 --name sql1 --hostname sql1 -d \
+mcr.microsoft.com/mssql/server:2019-latest
+~~~
+- usuário: sa
+- senha: digiTenis1@
