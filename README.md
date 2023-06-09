@@ -32,6 +32,7 @@ Vinícius Evangelista<br>
 
 ### Etapa 5
 **Dataframes em Python**
+- [functional_requirements.ipynb](https://github.com/matbragan/pucminas-projeto2/blob/main/functional_requirements.ipynb)
 
 <br>
 <hr>
