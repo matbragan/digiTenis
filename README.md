@@ -37,12 +37,17 @@ Vinícius Evangelista<br>
 <hr>
 <br>
 
+## Linux
 ### Criação do banco de dados via Docker
 ~~~sh
 sudo docker run \
 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=digiTenis1@" \
--p 1433:1433 --name sql1 --hostname sql1 -d \
+-p 1433:1433 --name digiTenis --hostname digiTenis -d \
 mcr.microsoft.com/mssql/server:2019-latest
 ~~~
 - usuário: sa
 - senha: digiTenis1@
+
+<br>
+
+[Conectando no banco de dados do SQLServer pelo Python](https://tryolabs.com/blog/2012/06/25/connecting-sql-server-database-python-under-ubuntu)
