@@ -38,7 +38,6 @@ Vinícius Evangelista<br>
 <hr>
 <br>
 
-## Linux
 ### Criação do banco de dados via Docker
 ~~~sh
 sudo docker run \
